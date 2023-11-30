@@ -15,6 +15,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -26,7 +27,7 @@
   <!-- Bootstrap Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">BeanOpedia</a>
+      <h1 class="navbar-brand" href="#">BeanOpedia</h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,13 +37,13 @@
             <a class="nav-link active" aria-current="page" href="#">About</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Test your knowledge</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Feedback</a>
+            <a class="nav-link" href="#">Test your knowledge!</a>
           </li>
         </ul>
       </div>
@@ -50,28 +51,33 @@
   </nav>
 <!-- Modal for welcome screen Bootstrap -->
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Press me
-  </button>
+  </button> -->
   
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div id="myModal" class="modal fade">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Welcome!</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome to BeanOpedia!</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+				<p>Choose one of the above, for a full experience while using our App: </p>
+                <form>
+                  <div class="quiz" id="quiz" data-toggle="buttons">
+                    <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">Coffee Shop Jams</label>
+                    <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Funky Jams</label>
+                    <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Floral Jams</label>
+                    <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Dark Jams</label>
+                </div>
+                    <button type="submit" class="btn btn-primary">Play</button>
+                </form>
+            </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
   <!-- Jumbotron bootstrap -->
   <div class="p-5 mb-4 me">
     <div class="container-fluid py-5 custom-Jumbo">
@@ -83,48 +89,39 @@
        <!-- about section/ Bootstrap-->
   <section class="about-me">
     <div class="container" id="about">
-      <h2 class="display-5 fw-bold text-center about-me">About</h2>
+      <h2 class="display-5 fw-bold text-center about-me">What is BeanOpedia?</h2>
     <div class="row info">
         <div class="col-sm-12">
         </div>
       </div>
     </div>
 
-<!--Modal for quiz Bootstrap-->
+<!--quiz Bootstrap-->
+<div class="container">
+<div class="wrapper">
+  <div id="start-screen" class="start">
+    <h1>Test your coffee knowledge!</h1>
+    <p>
+      Give it a shot by answering these coffee questions!
+      <br> Coffee is full of surprises and you never know, you might be a secret genius!
+    </p>
+    <button id="start">Start Quiz</button>
+  </div>
 
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">1st question</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          question
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">2nd question</button>
-        </div>
-      </div>
-    </div>
+  <div id="questions" class="hide">
+    <h2 id="question-title"></h2>
+    <div id="choices" class="choices"></div>
   </div>
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">2nd question</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Hide this modal and show the first with the button below.
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
-        </div>
-      </div>
-    </div>
+
+  <div id="end-screen" class="hide">
+    <h2>All done!</h2>
+    <p>Your final score is: <span id="final-score"></span>.</p>
+    <p>
+      Enter genius initials: <input type="text" id="initials" max="3" />
+      <button id="submit">Submit</button>
+    </p>
   </div>
-  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+</div>
 
   <!-- footer Bootstrap -->
   <div class="container text-center footer">
@@ -155,4 +152,5 @@
       <a class="nav-link disabled" aria-disabled="true">Contact us</a>
     </li>
   </ul> -->
+  <script src="../beanOpedia/assets/script.js"></script>
 </html>
