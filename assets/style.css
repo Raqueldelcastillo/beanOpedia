@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(
+      87.4deg,
+      rgb(255, 241, 165) 1.9%,
+      rgb(200, 125, 76) 49.7%,
+      rgb(83, 54, 54) 100.5%
+    );
+  }
+  .nav-link {
+    color: black;
+    transition: brown;
+  }
+  h1 {
+    font-family: "Courier New", Courier, monospace;
+    color: rgb(204, 185, 163);
+    text-align: center;
+
+    border: 2px solid #e7c484;
+    border-radius: 30px;
+    box-shadow: 0.5px 0.5px;
+    font-size: 40px;
+    background: rgb(83, 54, 54);
+    padding: 15px 20px;
+    transition: all 250ms ease-in-out;
+  }
