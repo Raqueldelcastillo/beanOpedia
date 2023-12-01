@@ -1,25 +1,44 @@
 body {
-    background: linear-gradient(
-      87.4deg,
-      rgb(255, 241, 165) 1.9%,
-      rgb(200, 125, 76) 49.7%,
-      rgb(83, 54, 54) 100.5%
-    );
-  }
-  .nav-link {
-    color: black;
-    transition: brown;
-  }
-  h1 {
-    font-family: "Courier New", Courier, monospace;
-    color: rgb(204, 185, 163);
-    text-align: center;
+  background: linear-gradient(
+    87.4deg,
+    rgb(255, 241, 165) 1.9%,
+    rgb(200, 125, 76) 49.7%,
+    rgb(83, 54, 54) 100.5%
+  );
+  font-family: "Courier New", Courier, monospace;
+}
+.nav-link {
+  color: black;
+  transition: brown;
+}
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(204, 185, 163);
+  text-align: center;
 
-    border: 2px solid #e7c484;
-    border-radius: 30px;
-    box-shadow: 0.5px 0.5px;
-    font-size: 40px;
-    background: rgb(83, 54, 54);
-    padding: 15px 20px;
-    transition: all 250ms ease-in-out;
-  }
+  border: 2px solid #e7c484;
+  border-radius: 30px;
+  box-shadow: 0.5px 0.5px;
+  font-size: 40px;
+  background: rgb(83, 54, 54);
+  padding: 15px 20px;
+  transition: all 250ms ease-in-out;
+}
+.start button {
+  font-weight: bold;
+  border-radius: 20px;
+  border-color: goldenrod;
+  color: rgb(55, 32, 3);
+  box-shadow: #e7c484;
+}
+.hoover button {
+  font-weight: bold;
+  border-radius: 20px;
+  border-color: rgb(40, 29, 0);
+  color: rgb(91, 66, 36);
+  box-shadow: #e7c484;
+}
+
+.navbar-nav {
+  align-items: flex-end;
+}
