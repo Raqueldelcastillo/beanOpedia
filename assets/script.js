@@ -65,7 +65,7 @@ var coffeeQuestions = [
     console.log(coffeeQuestions);
 
     // elements created for classes
-    var questionEl = $("#question");
+    var questionEl = $("#question-title");
     var startBtn = $("#start");
     var submitBtn = $("#submit");
     var initials = $("#initials");
@@ -79,4 +79,40 @@ var coffeeQuestions = [
     var winCount = 0;
     var totalScore;
 
+    // create a display questions function
+    function displayQuestions () {
+        var currentQuestion = coffeeQuestions[currentQuesIndex];
+        questionEl.text(currentQuestion.question);
+
+        var answerBtns = $("#choices");
+        answerBtns.html('');
+
+        currentQuestion.answers.forEach(function (answer) {
+            var answerBtn = $("<button>").addClass('answer').text(answer);
+            answerBtns.append(answerBtn);
+        })
+    }
     
+    // create answer button function 
+    // create a function that checks if the user selected correct answer and display a fact within the modal
+    // create a function to reset answer buttons (for each question)
+    // create a function to display next question
+    // create a start quiz function
+    function startQuiz() {
+        if (!quizStart) {
+            quizStart = true;
+            currentQuesIndex = 0;
+            displayQuestions();
+            startBtn.addClass("hide");
+            startScreen.addClass("hide");
+            questionEl.removeClass("hide");
+        }
+    }
+    startQuiz();
+    // add click function for start button
+    startBtn.on("click", function () {
+        startQuiz();
+    });
+    // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
+
+    // create a function to show the final score
