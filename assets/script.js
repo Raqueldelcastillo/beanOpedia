@@ -60,4 +60,23 @@ var coffeeQuestions = [
         correctAns: "4. Espresso - the name came from Italy",
         fact: "Its name is derived from the Italian word 'esprimere', which means 'to express' or 'to force out'. This term reflects the process of making espresso, where hot water is 	forced through finely-ground coffee under high pressure, resulting in a concentrated and flavorful shot of coffee. The name emphasizes the idea of extracting the essence of coffee 	through this intense and quick brewing method."
     }
-    ]
+    ];
+
+    console.log(coffeeQuestions);
+
+    // elements created for classes
+    var questionEl = $("#question");
+    var startBtn = $("#start");
+    var submitBtn = $("#submit");
+    var initials = $("#initials");
+    var feedback = $("#feedback");
+    var endScreen = $("#end-screen");
+    var startScreen = $("#start-screen");
+
+    // quiz state var
+    var currentQuesIndex = 0;
+    var quizStart = false;
+    var winCount = 0;
+    var totalScore;
+
+    
