@@ -78,25 +78,7 @@ var coffeeQuestions = [
     var quizStart = false;
     var winCount = 0;
     var totalScore;
-
-    // create a display questions function
-    function displayQuestions () {
-        var currentQuestion = coffeeQuestions[currentQuesIndex];
-        questionEl.text(currentQuestion.question);
-
-        var answerBtns = $("#choices");
-        answerBtns.html('');
-
-        currentQuestion.answers.forEach(function (answer) {
-            var answerBtn = $("<button>").addClass('answer').text(answer);
-            answerBtns.append(answerBtn);
-        })
-    }
     
-    // create answer button function 
-    // create a function that checks if the user selected correct answer and display a fact within the modal
-    // create a function to reset answer buttons (for each question)
-    // create a function to display next question
     // create a start quiz function
     function startQuiz() {
         if (!quizStart) {
@@ -113,6 +95,42 @@ var coffeeQuestions = [
     startBtn.on("click", function () {
         startQuiz();
     });
+    // create a display questions function
+    function displayQuestions () {
+        var currentQuestion = coffeeQuestions[currentQuesIndex];
+        questionEl.text(currentQuestion.question);
+
+        var answerBtns = $("#choices");
+        answerBtns.html('');
+
+        currentQuestion.answers.forEach(function (answer) {
+            var answerBtn = $("<button>").addClass('answer').text(answer);
+            answerBtns.append(answerBtn);
+        })
+    }
+    
+    // create answer button function 
+    function createAnsBtn(answer, correctAns) {
+        var answerBtn = $("<button>").addClass("button").text(answer).attr("data-correct-ans", correctAns);
+
+        answerBtn.on("click", function () {
+            var selectedAns = $(this).text();
+            checkAns(selectedAns, correctAns);
+        });
+        $("choices").append(answerBtn);
+    }
+    // create a function that checks if the user selected correct answer and display a fact within the modal
+    function checkAns(selectedAns, correctAns) {
+        if (selectedAns === correctAns) {
+            winCount++;
+            feedback.removeClass("hide").text("Genius! You are correct!");
+        } else {
+            feedback.removeClass("hide").text("Sorry.. Wrong");
+        }
+        totalScore = winCount;
+    }
+    // create a function to reset answer buttons (for each question)
+    // create a function to display next question
     // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
 
     // create a function to show the final score
