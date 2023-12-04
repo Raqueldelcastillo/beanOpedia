@@ -22,4 +22,13 @@ body {
     background: rgb(83, 54, 54);
     padding: 15px 20px;
     transition: all 250ms ease-in-out;
-  }
+  };
+
+  /* quiz part */
+
+  /* .start {
+    text-align: center;
+  } */
+.hide {
+  display: none;
+}
