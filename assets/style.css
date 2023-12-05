@@ -86,11 +86,12 @@ button:hover {
   color: #309664;
 }
 .custom-Jumbo {
-  background-image: url ("im");
+  /* background-image: url ("im"); */
 }
 /* Footer */
 .emailContain {
   width: min-content;
+  background-image: url(../images/map\ w\ leaf.png);
   background-size: cover;
   display: flex;
   align-items: center;
