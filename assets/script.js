@@ -146,3 +146,29 @@ var coffeeQuestions = [
     // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
 
     // create a function to show the final score
+
+
+
+
+    function coffeeApi() {
+        var queryUrl = "https://api.sampleapis.com/coffee/hot";
+        fetch(queryUrl)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          });
+      }
+      
+      coffeeApi();
+      
+      // function showhotCoffee(data) {
+      //   let currentEl = document.getElementById("tittle");
+      //   let hotCoffee = data;
+      //   let coffeeEl = document.createElement("h3");
+      //   coffeeEl.innerHTML = hotCoffee;
+      //   currentEl.append(coffeeEl);
+      // }
+      // showhotCoffee();
+      
