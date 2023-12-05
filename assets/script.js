@@ -1,6 +1,7 @@
 $(document).ready(function(){
     // event.preventDefault();
     $("#myModal").modal('show');
+
 });
 
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
