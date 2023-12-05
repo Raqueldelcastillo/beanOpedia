@@ -65,7 +65,7 @@ var coffeeQuestions = [
     console.log(coffeeQuestions);
 
     // elements created for classes
-    var questionEl = $("#question");
+    var questionEl = $("#question-title");
     var startBtn = $("#start");
     var submitBtn = $("#submit");
     var initials = $("#initials");
@@ -78,5 +78,71 @@ var coffeeQuestions = [
     var quizStart = false;
     var winCount = 0;
     var totalScore;
-
     
+    // create a start quiz function
+    function startQuiz() {
+        if (!quizStart) {
+            quizStart = true;
+            currentQuesIndex = 0;
+            displayQuestions();
+            startBtn.addClass("hide");
+            startScreen.addClass("hide");
+            questionEl.removeClass("hide");
+        }
+    }
+    startQuiz();
+    // add click function for start button
+    startBtn.on("click", function () {
+        startQuiz();
+    });
+    // create a display questions function
+    function displayQuestions () {
+        var currentQuestion = coffeeQuestions[currentQuesIndex];
+        questionEl.text(currentQuestion.question);
+
+        var answerBtns = $("#choices");
+        answerBtns.html('');
+
+        currentQuestion.answers.forEach(function (answer) {
+            var answerBtn = $("<button>").addClass('answer').text(answer);
+            answerBtns.append(answerBtn);
+        })
+    }
+    
+    // create answer button function 
+    function createAnsBtn(answer, correctAns) {
+        var answerBtn = $("<button>").addClass("button").text(answer).attr("data-correct-ans", correctAns);
+
+        answerBtn.on("click", function () {
+            var selectedAns = $(this).text();
+            checkAns(selectedAns, correctAns);
+            displayNextQuestion();
+        });
+        $("choices").append(answerBtn);
+    }
+    // create a function that checks if the user selected correct answer and display a fact within the modal
+    function checkAns(selectedAns, correctAns) {
+        if (selectedAns === correctAns) {
+            winCount++;
+            feedback.removeClass("hide").text("Genius! You are correct!");
+        } else {
+            feedback.removeClass("hide").text("Sorry.. Wrong");
+        }
+        totalScore = winCount;
+    }
+    // create a function to reset answer buttons (for each question)
+    // create a function to display next question
+    function displayNextQuestion () {
+        currentQuesIndex++;
+        if (currentQuesIndex < coffeeQuestions.length) {
+            displayQuestions();
+        } else {
+            console.log("End of quiz. Total Score: " + totalScore);
+
+            endScreen.removeClass("hide");
+            $("final-score").text(totalScore);
+        };
+    };
+    // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
+
+    // create a function to show the final score
