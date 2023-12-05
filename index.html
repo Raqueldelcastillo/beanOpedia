@@ -30,7 +30,6 @@
               <a class="nav-link" href="#history">History</a>
               <a class="nav-link" href="#recipes">Recipes</a>
               <a class="nav-link" href="#quiz">Quiz</a>
-
             </div>
           </div>
         </div>
@@ -38,38 +37,105 @@
       <!--Modal for welcome screen Bootstrap -->
       <!--Button trigger modal-->
 
-      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Press me</button> -->
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal">Enjoy our favourite coffee jams </button>
   
       <!--Modal-->
-      <!-- <div id="myModal" class="modal fade">
+      <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Welcome to BeanOpedia!</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
+                <div class="modal-header"><h5 class="modal-title">Welcome to BeanOpedia!</h5></div>
                 <div class="modal-body">
-            <p>Choose one of the above, for a full experience while using our website: </p>
+                  <p>Match your cup of Joe with one of our selected playlists !</p>
                     <form>
-                      <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">Coffee Shop Jams</label>
-                        <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Funky Jams</label>
+                      <!--PLAYLIST 1-->
+                      <div class="music-player-playlist-1" id="player-playlist-1" data-toggle="buttons">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Btl13LcHI3ecZyL39rGnJ?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <p>
+                          <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-playlist-1" aria-expanded="false" aria-controls="collapse-playlist-1">
+                            Playlist info
+                          </button>
+                        </p>
+                        <div class="collapse" id="collapse-playlist-1">
+                          <div class="card card-body">
+                            <table id="data-table-playlist-1">
+                              <thead>
+                                <tr>
+                                  <!-- <th scope="col" class="track-number">#</th> -->
+                                  <th scope="col" class="tracktitle">Title</th>
+                                  <th scope="col" class="artistname">Artist</th>
+                                  <th scope="col" class="trackThumbnail">Cover</th>
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <!-- Track list loop though the arrays to populate the table with the api data-->
+                            </tbody>
+                          </table>
+                          </div>
+                        </div>
+                      </div>
+                      <!--PLAYLIST 2-->
+                      <div class="music-player-playlist-2" id="player-playlist-2" data-toggle="buttons">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3UEBkaOZDmX7RXxNNxYcBA?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <p>
+                          <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-playlist-2" aria-expanded="false" aria-controls="collapse-playlist-2">
+                            Playlist info
+                          </button>
+                        </p>
+                        <div class="collapse" id="collapse-playlist-2">
+                          <div class="card card-body">
+                            <table id="data-table-playlist-2">
+                              <thead>
+                                <tr>
+                                  <!-- <th scope="col" class="track-number">#</th> -->
+                                  <th scope="col" class="tracktitle">Title</th>
+                                  <th scope="col" class="artistname">Artist</th>
+                                  <th scope="col" class="thumbnail-image">Cover</th>
+                                </tr>
+                              </thead>
+                              <!-- Track list loop though the arrays to populate the table with the api data-->
+                            <tbody>
+                            </tbody>
+                          </table>
+                          </div>
+                        </div>
+                      </div>
+                      <!--PLAYLIST 3-->
+                      <div class="music-player-playlist-3" id="player-caramel-playlist-3" data-toggle="buttons">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1uaml3UXYLk?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <p>
+                          <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-playlist-3" aria-expanded="false" aria-controls="collapse-playlist-3">
+                            Playlist info
+                          </button>
+                        </p>
+                        <div class="collapse" id="collapse-playlist-3">
+                          <div class="card card-body">
+                            <table id="data-table-playlist-3">
+                              <thead>
+                                <tr>
+                                  <!-- <th scope="col" class="track-number">#</th> -->
+                                  <th scope="col" class="tracktitle">Title</th>
+                                  <th scope="col" class="artistname">Artist</th>
+                                  <th scope="col" class="trackThumbnail">Cover</th>
+                                </tr>
+                              </thead>
+                              <!-- Track list loop though the arrays to populate the table with the api data-->
+                            <tbody>
+                            </tbody>
+                          </table>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                         <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Funky Jams</label>
                         <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Floral Jams</label>
-                        <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Dark Jams</label>
-                    </div>
-                        <button type="submit" class="btn btn-primary">Play</button>
+                        <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Dark Jams</label> -->
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Play</button> -->
                     </form>
                 </div>
             </div>
-        </div>
-      </div> -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            ...
-          </div>
         </div>
       </div>
       <!-- Jumbotron bootstrap -->
@@ -79,7 +145,6 @@
             <p class="col-sm-4 col-lg-8 fs-4 description">Your favourite app! Build for coffee enthusiast and everyone who is interested to explore the great world of coffee.</p>
         </div>
       </div>
-
        <!-- about section Bootstrap-->
       <section class="about-coffee">
         <div class="container" id="about">
@@ -91,7 +156,6 @@
           </div>
         </div>
       </section>
-    
 
       <!-- history section -->
       <section class="history-coffee">
@@ -273,7 +337,7 @@
       </li>
     </ul> -->
     </div>
-    <script src="../beanOpedia/assets/script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 
 </html>
