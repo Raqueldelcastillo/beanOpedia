@@ -30,7 +30,6 @@
               <a class="nav-link" href="#history">History</a>
               <a class="nav-link" href="#recipes">Recipes</a>
               <a class="nav-link" href="#quiz">Quiz</a>
-
             </div>
           </div>
         </div>
@@ -48,15 +47,15 @@
                 <div class="modal-body">
                   <p>Match your cup of Joe with one of our selected playlists !</p>
                     <form>
-                      <div class="quiz" id="quiz" data-toggle="buttons">
+                      <div class="music-player-caramel" id="player-caramel" data-toggle="buttons">
                         <!-- <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">Coffee Shop Jams</label> -->
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         <p>
-                          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-caramel" aria-expanded="false" aria-controls="collapseExample">
                             Playlist info
                           </button>
                         </p>
-                        <div class="collapse" id="collapseExample">
+                        <div class="collapse" id="collapse-caramel">
                           <div class="card card-body">
                             <table id="data-table-caramel">
                               <thead>
@@ -64,7 +63,7 @@
                                   <!-- <th scope="col" class="track-number">#</th> -->
                                   <th scope="col" class="tracktitle">Title</th>
                                   <th scope="col" class="artistname">Artist</th>
-                                  <th scope="col" class="thumbnail-image">Cover</th>
+                                  <th scope="col" class="trackThumbnail">Cover</th>
                                 </tr>
                               </thead>
                               <!-- Track list loop though the arrays to populate the table with the api data-->
@@ -299,7 +298,7 @@
       </li>
     </ul> -->
     </div>
-    <script src="../beanOpedia/assets/script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 
 </html>
