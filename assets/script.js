@@ -116,6 +116,7 @@ var coffeeQuestions = [
         answerBtn.on("click", function () {
             var selectedAns = $(this).text();
             checkAns(selectedAns, correctAns);
+            displayNextQuestion();
         });
         $("choices").append(answerBtn);
     }
@@ -131,6 +132,17 @@ var coffeeQuestions = [
     }
     // create a function to reset answer buttons (for each question)
     // create a function to display next question
+    function displayNextQuestion () {
+        currentQuesIndex++;
+        if (currentQuesIndex < coffeeQuestions.length) {
+            displayQuestions();
+        } else {
+            console.log("End of quiz. Total Score: " + totalScore);
+
+            endScreen.removeClass("hide");
+            $("final-score").text(totalScore);
+        };
+    };
     // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
 
     // create a function to show the final score
