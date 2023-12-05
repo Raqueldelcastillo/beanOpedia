@@ -125,14 +125,6 @@
                           </div>
                         </div>
                       </div>
-                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ziVCJnEm59?utm_source=generator" width="90%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                         <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Funky Jams</label>
-                        <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Floral Jams</label>
-                        <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Dark Jams</label> -->
-                        </div>
-                        <!-- <button type="submit" class="btn btn-primary">Play</button> -->
                     </form>
                 </div>
             </div>
@@ -156,8 +148,7 @@
           </div>
         </div>
       </section>
-
-      <!-- history section -->
+      <!--history section -->
       <section class="history-coffee">
         <div class="container" id="history">
           <h3 class="display-5 fw-bold text-center history">History of Coffee</h3>
@@ -265,77 +256,94 @@
         </div>
       </section>
        <!-- recipes section -->
-    <section class="recipes-coffee">
-      <div class="container" id="recipes">
-        <h3 class="display-5 fw-bold text-center history">Recipes</h3>
-        <div class="row info">
-          <div class="col-sm-12">
-            <p></p>
+      <section class="recipes-coffee">
+        <div class="container" id="recipes">
+          <h3 class="display-5 fw-bold text-center history">Recipes</h3>
+          <div class="row info">
+            <div class="col-sm-12">
+              <p></p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!--quiz Bootstrap-->
-    <section class="quizSection">
-      <div class="container" id ="quiz">
-        <div class="wrapper">
-          <div id="start-screen" class="start">
-            <h3>Test your coffee knowledge!</h3>
+      </section>
+      <!--COFFEE BLENDS SELECTION-->
+      <section class="coffee-blends-selections">
+        <div class="container" id="recipes">
+          <div class="card card-body">
+            <table id="data-table-blends">
+              <thead>
+                <tr>
+                  <th scope="col" class="blend-names">Name</th>
+                  <th scope="col" class="blend-descriptions">Blend Description</th>
+                  <th scope="col" class="blend-flavour-profiles">Flavour Profile</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <!-- blend descriptions arrays to populate the table with the api data-->
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!--quiz Bootstrap-->
+      <section class="quizSection">
+        <div class="container" id ="quiz">
+          <div class="wrapper">
+            <div id="start-screen" class="start">
+              <h3>Test your coffee knowledge!</h3>
+                <p>
+                  Give it a shot by answering these coffee questions!
+                <br> Coffee is full of surprises and you never know, you might be a secret genius!
+                </p>
+                <button id="start">Start Quiz</button>
+            </div>
+
+            <div id="questions" class="hide">
+              <h3 id="question-title"></h3>
+              <div id="choices" class="choices"></div>
+            </div>
+            <!-- End screen for quiz -->
+            <!-- ------------------------------- -->
+            <div id="end-screen" class="hide">
+              <h3>All done!</h3>
+              <p>Your final score is: <span id="final-score"></span>.</p>
               <p>
-                Give it a shot by answering these coffee questions!
-              <br> Coffee is full of surprises and you never know, you might be a secret genius!
+                Enter genius initials: <input type="text" id="initials" max="3" />
+                <button id="submit">Submit</button>
               </p>
-              <button id="start">Start Quiz</button>
+            </div>
           </div>
-
-          <div id="questions" class="hide">
-            <h3 id="question-title"></h3>
-            <div id="choices" class="choices"></div>
+        </div>
+      </section>
+      <!-- footer Bootstrap -->
+      <div class="container text-center footer">
+        <div class="row align-items-center box">
+          <div class="col-md-4">
+            
           </div>
-          <!-- End screen for quiz -->
-          <!-- ------------------------------- -->
-          <div id="end-screen" class="hide">
-            <h3>All done!</h3>
-            <p>Your final score is: <span id="final-score"></span>.</p>
-             <p>
-              Enter genius initials: <input type="text" id="initials" max="3" />
-              <button id="submit">Submit</button>
-            </p>
+          <div class="col-md-4 web">
+            Thank you for visiting us!
+          </div>
+          <div class="col-md-4">
           </div>
         </div>
       </div>
-    </section>
-      
 
-    <!-- footer Bootstrap -->
-    <div class="container text-center footer">
-      <div class="row align-items-center box">
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-4 web">
-          Thank you for visiting us!
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
-    </div>
-
-    <!-- <h1>Coffe and Co</h1>
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Quiz</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Music</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Coffes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" aria-disabled="true">Contact us</a>
-      </li>
-    </ul> -->
+      <!-- <h1>Coffe and Co</h1>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Coffes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Contact us</a>
+        </li>
+      </ul> -->
     </div>
     <script src="./assets/script.js"></script>
   </body>
