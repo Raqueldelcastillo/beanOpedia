@@ -7,8 +7,8 @@ body {
   border: 2px solid #e7c484;
   border-radius: 30px;
   box-shadow: 0.5px 0.5px;
-  font-size: 40px;
-  background: rgb(83, 54, 54);
+  /* font-size: 40px; */
+  /* background: rgb(83, 54, 54); */
   padding: 15px 20px;
   transition: all 250ms ease-in-out;
 
@@ -29,28 +29,7 @@ body {
 .nav-item {
   margin: 0px 15px;
 }
-/* .backgroundJB {
-  background-image: url(../images/simple\ map.jpg);
-  width: fit-content;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: calc(100vh - 25px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* h1 {
-  color: rgb(204, 185, 163);
-  text-align: center;
 
-  border: 2px solid #e7c484;
-  border-radius: 30px;
-  box-shadow: 0.5px 0.5px;
-  font-size: 40px;
-  background: rgb(83, 54, 54);
-  padding: 15px 20px;
-  transition: all 250ms ease-in-out;
-} */
 .start button {
   background-image: url(../images/simple\ map.jpg);
   font-weight: bold;
@@ -93,7 +72,8 @@ button:hover {
   color: #309664;
 }
 .custom-Jumbo {
-  /* background-image: url ("im"); */
+  background-image: url(../images/beans\ 3.png);
+  background-size: cover;
 }
 /* Footer */
 .emailContain {
