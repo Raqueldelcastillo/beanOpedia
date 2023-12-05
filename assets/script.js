@@ -3,6 +3,10 @@ $(document).ready(function(){
     $("#myModal").modal('show');
 });
 
+//SELECT COFFEE BLENDS WITH FAKE BLENDS API //
+// function selectCoffeeBlends()
+
+
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
 var coffeeQuestions = [
     {
