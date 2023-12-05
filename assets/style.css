@@ -25,7 +25,11 @@ body {
   };
 
   /* quiz part */
-
-  .hide {
-    display: none;
+  #start-screen {
+    text-align: center;
   }
+  
+    .hide {
+      display: none;
+    }
+    
