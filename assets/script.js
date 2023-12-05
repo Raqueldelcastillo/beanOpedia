@@ -153,7 +153,7 @@ var coffeeQuestions = [
         "3. It used to grow, but global warming caused no more coffee farming in Italy..",
         "4. No, it can only be roasted in Italy." ],
         correctAns: "4. No, it can only be roasted in Italy.",
-        fact: "	Italy's climate is not suitable for coffee cultivation as it lacks the tropical conditions required. Italy imports, roasts, and prepares coffee beans from coffee-producing regions globally, contributing to its rich coffee culture."
+        fact: "	Climate in Italy is not suitable for coffee cultivation as it lacks the tropical conditions required. Italy imports, roasts, and prepares coffee beans from coffee-producing regions globally, contributing to its rich coffee culture."
     },
     {
         question: "Does bitter coffee has more caffeine?",
@@ -206,7 +206,8 @@ var coffeeQuestions = [
     console.log(coffeeQuestions);
 
     // elements created for classes
-    var questionEl = $("#question-title");
+    var questionEl = $("#questions");
+    var questionTitle = $("#question-title");
     var startBtn = $("#start");
     var submitBtn = $("#submit");
     var initials = $("#initials");
@@ -223,31 +224,37 @@ var coffeeQuestions = [
     // create a start quiz function
     function startQuiz() {
         if (!quizStart) {
+            console.log("startQuiz");
             quizStart = true;
             currentQuesIndex = 0;
-            displayQuestions();
+            // displayQuestions();
+            console.log("hiding things");
             startBtn.addClass("hide");
             startScreen.addClass("hide");
             questionEl.removeClass("hide");
-        }
-    }
-    startQuiz();
+        };
+    };
+    // startQuiz();
     // add click function for start button
     startBtn.on("click", function () {
         startQuiz();
+        displayQuestions();
     });
     // create a display questions function
     function displayQuestions () {
+        console.log("displayQuestions");
         var currentQuestion = coffeeQuestions[currentQuesIndex];
-        questionEl.text(currentQuestion.question);
+        questionTitle.text(currentQuestion.question);
 
         var answerBtns = $("#choices");
         answerBtns.html('');
 
+        console.log(currentQuestion);
         currentQuestion.answers.forEach(function (answer) {
+            console.log(answer);
             var answerBtn = $("<button>").addClass('answer').text(answer);
             answerBtns.append(answerBtn);
-        })
+        });
     }
     
     // create answer button function 
@@ -259,7 +266,7 @@ var coffeeQuestions = [
             checkAns(selectedAns, correctAns);
             displayNextQuestion();
         });
-        $("choices").append(answerBtn);
+        $("#choices").append(answerBtn);
     }
     // create a function that checks if the user selected correct answer and display a fact within the modal
     function checkAns(selectedAns, correctAns) {
@@ -281,7 +288,7 @@ var coffeeQuestions = [
             console.log("End of quiz. Total Score: " + totalScore);
 
             endScreen.removeClass("hide");
-            $("final-score").text(totalScore);
+            $("#final-score").text(totalScore);
         };
     };
     // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
