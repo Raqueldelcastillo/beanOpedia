@@ -4,6 +4,13 @@ body {
     rgb(245, 220, 154) 0%,
     rgb(164, 78, 51) 90%
   );
+  border: 2px solid #e7c484;
+  border-radius: 30px;
+  box-shadow: 0.5px 0.5px;
+  font-size: 40px;
+  background: rgb(83, 54, 54);
+  padding: 15px 20px;
+  transition: all 250ms ease-in-out;
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -122,4 +129,33 @@ footer {
 }
 .card {
   margin: 0 auto;
+}
+
+/*Music Modal*/
+
+/* .modal-btn {
+    display: inline-block;
+    height: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;trackThumbnail
+    cursor: pointer;
+    border: 2px solid #A64E2E;
+    color: #3498db;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .modal-btn:hover {
+    background-color: #A6592D;
+    color: #fff;
+  } */
+/* quiz part */
+#start-screen {
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }
