@@ -5,53 +5,9 @@ $(document).ready(function(){
 });
 
 //MUSIC PLAYER MODAL //
-function floralPlaylist() {
-    const settings = {
-        async: true,
-        crossDomain: true,
-        url: 'https://spotify23.p.rapidapi.com/playlist_tracks/?id=3UEBkaOZDmX7RXxNNxYcBA&offset=0&limit=100',
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f',
-            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-        }
-    };
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-
-        // Access the table body
-        const tableBody = $('#data-table-floral tbody');
-
-        // Loop through the items and populate the table
-        response.items.forEach(function (item) {
-            // Access data for each track
-            const trackTitle = item.track.name;
-            const trackArtist = item.track.artists[0].name;
-            const trackThumbnail = item.track.album.images[0].url;
-
-            // Create a new row
-            const row = $('<tr>');
-
-            // Append cells to the row
-            row.append($('<td>').text(trackTitle));
-            row.append($('<td>').text(trackArtist));
-
-            // Create an image element and set the src attribute
-            const thumbnailCell = $('<td>').append($('<img>').attr('src', trackThumbnail).addClass('trackThumbnail'));
-            row.append(thumbnailCell);
-
-            // Append the row to the table body
-            tableBody.append(row);
-        });
-    });
-}
-
-floralPlaylist();
-
-
-
-function caramelTones() {
+//PLAYLIST 1// 
+function playlist1() {
     const settings = {
         async: true,
         crossDomain: true,
@@ -67,7 +23,7 @@ function caramelTones() {
         console.log(response);
 
         // Access the table body
-        const tableBody = $('#data-table-caramel tbody');
+        const tableBody = $('#data-table-playlist-1 tbody');
 
         // Loop through the items and populate the table
         response.items.forEach(function (item) {
@@ -93,15 +49,15 @@ function caramelTones() {
     });
 }
 
-caramelTones();
+playlist1();
 
+//PLAYLIST 2//
 
-
-function chocolateTones() {
+function playlist2() {
     const settings = {
         async: true,
         crossDomain: true,
-        url: 'https://spotify23.p.rapidapi.com/playlist_tracks/?id=37i9dQZF1DX1uaml3UXYLk&offset=0&limit=100',
+        url: 'https://spotify23.p.rapidapi.com/playlist_tracks/?id=3UEBkaOZDmX7RXxNNxYcBA&offset=0&limit=100',
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f',
@@ -113,7 +69,7 @@ function chocolateTones() {
         console.log(response);
 
         // Access the table body
-        const tableBody = $('#data-table-chocolate tbody');
+        const tableBody = $('#data-table-playlist-2 tbody');
 
         // Loop through the items and populate the table
         response.items.forEach(function (item) {
@@ -130,7 +86,7 @@ function chocolateTones() {
             row.append($('<td>').text(trackArtist));
 
             // Create an image element and set the src attribute
-            const thumbnailCell = $('<td>').append($('<img>').attr('src', trackThumbnail).addClass('trackThumbnail'));
+            const thumbnailCell = $('<td>').append($('<img>').attr('src', trackThumbnail).addClass('trackThumbnail').css('max-width', '50px'));
             row.append(thumbnailCell);
 
             // Append the row to the table body
@@ -139,7 +95,53 @@ function chocolateTones() {
     });
 }
 
-chocolateTones();
+playlist2();
+
+// PLAYLIST 3// 
+
+function playlist3() {
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: 'https://spotify23.p.rapidapi.com/playlist_tracks/?id=37i9dQZF1DX1uaml3UXYLk&offset=0&limit=100',
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f',
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+
+        // Access the table body
+        const tableBody = $('#data-table-playlist-3 tbody');
+
+        // Loop through the items and populate the table
+        response.items.forEach(function (item) {
+            // Access data for each track
+            const trackTitle = item.track.name;
+            const trackArtist = item.track.artists[0].name;
+            const trackThumbnail = item.track.album.images[0].url;
+
+            // Create a new row
+            const row = $('<tr>');
+
+            // Append cells to the row
+            row.append($('<td>').text(trackTitle));
+            row.append($('<td>').text(trackArtist));
+
+            // Create an image element and set the src attribute
+            const thumbnailCell = $('<td>').append($('<img>').attr('src', trackThumbnail).addClass('trackThumbnail').css('max-width', '50px'));
+            row.append(thumbnailCell);
+
+            // Append the row to the table body
+            tableBody.append(row);
+        });
+    });
+}
+
+playlist3();
 
 
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
