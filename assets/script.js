@@ -424,6 +424,8 @@ submitBtn.on("click", function (event) {
     localStorage.setItem(userInitials + "_" + Date.now(), totalScore.toString());
 
     // hide the submit button and show success message
+    submitBtn.addClass("hide");
+    showSuccessMsg();
 })
 
 // create a function to show the final score and remove question element with answer buttons
@@ -433,6 +435,13 @@ function endQuiz(userInitials) {
 // display users final score 
     var finalScore = $("#final-score");
     finalScore.text(totalScore);
+};
+
+// hide submitBtn and show submit-screen
+function showSuccessMsg() {
+    var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
+    // append successMsg
+    submitBtn.parent().append(successMsg);
 };
 
 function coffeeApi() {
