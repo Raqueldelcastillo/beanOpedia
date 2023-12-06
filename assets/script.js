@@ -145,6 +145,7 @@ playlist3();
 
 
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
+try {
 var coffeeQuestions = [
     {
         question: "Does coffee grows in Italy?",
@@ -153,7 +154,7 @@ var coffeeQuestions = [
         "3. It used to grow, but global warming caused no more coffee farming in Italy..",
         "4. No, it can only be roasted in Italy." ],
         correctAns: "4. No, it can only be roasted in Italy.",
-        fact: "	Climate in Italy is not suitable for coffee cultivation as it lacks the tropical conditions required. Italy imports, roasts, and prepares coffee beans from coffee-producing regions globally, contributing to its rich coffee culture."
+        fact: "Climate in Italy is not suitable for coffee cultivation as it lacks the tropical conditions required. Italy imports, roasts, and prepares coffee beans from coffee-producing regions globally, contributing to its rich coffee culture."
     },
     {
         question: "Does bitter coffee has more caffeine?",
@@ -247,42 +248,53 @@ var coffeeQuestions = [
         questionTitle.text(currentQuestion.question);
 
         var answerBtns = $("#choices");
-        answerBtns.html('');
+        answerBtns.empty();
 
         console.log(currentQuestion);
         currentQuestion.answers.forEach(function (answer) {
             console.log(answer);
-            var answerBtn = $("<button>").addClass('answer').text(answer);
-            answerBtns.append(answerBtn);
+            // var answerBtn = $("<button>").addClass('button').text(answer);
+            // answerBtns.append(answerBtn);
+            createAnsBtn(answer, currentQuestion.correctAns);
         });
     }
     
     // create answer button function 
     function createAnsBtn(answer, correctAns) {
-        var answerBtn = $("<button>").addClass("button").text(answer).attr("data-correct-ans", correctAns);
-
+        var answerBtn = $("<button>").addClass("answer").text(answer);
+        console.log("answerBtn");
         answerBtn.on("click", function () {
+            console.log("Answer button clicked");
             var selectedAns = $(this).text();
+            console.log("Selected Answer: ", selectedAns);
             checkAns(selectedAns, correctAns);
-            displayNextQuestion();
         });
+        console.log("click");
         $("#choices").append(answerBtn);
+        // questionTitle.append(answerBtn);
     }
     // create a function that checks if the user selected correct answer and display a fact within the modal
-    function checkAns(selectedAns, correctAns) {
+    function checkAns(selectedAns, correctAns, fact) {
+        console.log("Selected Answer:", selectedAns);
+    console.log("Correct Answer:", correctAns);
         if (selectedAns === correctAns) {
             winCount++;
-            feedback.removeClass("hide").text("Genius! You are correct!");
+            feedback.removeClass("hide").text("Genius! You are correct! " + fact);
         } else {
-            feedback.removeClass("hide").text("Sorry.. Wrong");
+            feedback.removeClass("hide").text("Sorry.. Wrong " + fact);
         }
         totalScore = winCount;
+        displayNextQuestion();
     }
     // create a function to reset answer buttons (for each question)
+    function resetAnsBtns() {
+        $("#choices").empty();
+    }
     // create a function to display next question
     function displayNextQuestion () {
         currentQuesIndex++;
         if (currentQuesIndex < coffeeQuestions.length) {
+            resetAnsBtns();
             displayQuestions();
         } else {
             console.log("End of quiz. Total Score: " + totalScore);
@@ -291,6 +303,9 @@ var coffeeQuestions = [
             $("#final-score").text(totalScore);
         };
     };
+} catch (error) {
+    console.error(error);
+}
     // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
 
     // create a function to show the final score
