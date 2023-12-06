@@ -14,6 +14,15 @@ body {
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.logo {
+  border-radius: 15px;
+  float: left;
+  margin-bottom: 50px auto;
+}
+.description {
+  float: inline-start;
+  padding: 30px auto;
+}
 .nav-link {
   color: black;
   transition: brown;
@@ -72,8 +81,10 @@ button:hover {
   color: #309664;
 }
 .custom-Jumbo {
-  background-image: url(../images/beans\ 3.png);
   background-size: cover;
+  border-radius: 15px;
+  color: #412809;
+  font-weight: bolder;
 }
 /* Footer */
 .emailContain {

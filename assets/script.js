@@ -15,6 +15,54 @@ $(document).ready(function () {
 // }
 // fetchUrl();
 
+var queryUrl = "https://api.sampleapis.com/coffee/hot";
+fetch(queryUrl).then(function (response) {
+  console.log(response);
+  return response.json();
+});
+// .then(function (data) {
+//   var results =data.data; // for (var i =0; i <results.length; i++){}
+
+// })
+
+// const tableBody = $("#data-table-queryUrl tbody");
+
+//     // Loop through the items and populate the table
+//     response.items.forEach(function (item) {
+//       // Access data for each recipe
+//       const titleCoffe = title;
+//       const trackArtist = item.track.artists[0].name;
+//       const trackThumbnail = item.track.album.images[0].url;
+
+//       // Create a new row
+//       const row = $("<tr>");
+
+//       // Append cells to the row
+//       row.append($("<td>").text(trackTitle));
+//       row.append($("<td>").text(trackArtist));
+
+//       // Create an image element and set the src attribute
+//       const thumbnailCell = $("<td>").append(
+//         $("<img>")
+//           .attr("src", trackThumbnail)
+//           .addClass("trackThumbnail")
+//           .css("max-width", "50px")
+//       );
+//       row.append(thumbnailCell);
+
+//       // Append the row to the table body
+//       tableBody.append(row);
+//     });
+//   });
+// }
+
+// playlist1();
+
+
+
+
+
+
 var recipeBtn1 = document.querySelector("#Cappucino-recipe");
 
 function showCappucinoRecipe() {
