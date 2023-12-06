@@ -65,11 +65,19 @@ button:hover {
   background-color: #198754;
 }
 
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+}
 .modal-title {
-  color: #309664;
+  color: #965E24;
+  text-align: center;
 }
 .modal-body {
-  color: #309664;
+  color: #965E24;
 }
 .custom-Jumbo {
   background-image: url(../images/beans\ 3.png);
@@ -77,20 +85,21 @@ button:hover {
 }
 /* Footer */
 .emailContain {
-  width: min-content;
+  width: auto;
   background-image: url(../images/map\ w\ leaf.png);
   background-size: cover;
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  height: 300px;
   color: rgb(198, 223, 198);
 }
 /* Footer form */
 form {
-  width: 500px;
+  width: auto;
   margin: 35px auto;
   padding: 45px;
   border: 1px solid #f2f2f2;

@@ -3,17 +3,7 @@ $(document).ready(function () {
   $("#myModal").modal("show");
 });
 
-// function fetchUrl() {
-//   var queryURL = "https://api.sampleapis.com/coffee/hot";
-//   fetch(queryURL)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-// }
-// fetchUrl();
+
 
 var recipeBtn1 = document.querySelector("#Cappucino-recipe");
 
@@ -211,37 +201,37 @@ function displayBlends() {
       })
       console.log(filteredData);
 
-      // //access name
-      // const blendName = filteredData[0].name;
-      // console.log(blendName);
+      //access name
+      const blendName = filteredData[0].name;
+      console.log(blendName);
 
-      // //access description 
-      // const blendDescription = filteredData[0].description;
-      // console.log(blendDescription);
+      //access description 
+      const blendDescription = filteredData[0].description;
+      console.log(blendDescription);
 
-      // // Access the table body
-      // const blendstableBody = $('#data-table-blends tbody');
+      // Access the table body
+      const blendstableBody = $('#data-table-blends tbody');
 
-      // // Loop through the items and populate the table
-      // filteredData.forEach ((items) =>{
-      //     // Access data for each blend name
-      //     const blendName = items.name;
-      //     const blendDescription = items.description;
-      //     const flavourProfiles = items.flavor_profile;
-      //     console.log(items.flavor_profile);
-      //     console.log(blendName);
+      // Loop through the items and populate the table
+      filteredData.forEach ((items) =>{
+          // Access data for each blend name
+          const blendName = items.name;
+          const blendDescription = items.description;
+          const flavourProfiles = items.flavor_profile;
+          console.log(items.flavor_profile);
+          console.log(blendName);
 
-      //     // Create a new row
-      //     const row = $('<tr>');
+          // Create a new row
+          const row = $('<tr>');
 
-      //     // Append cells to the row
-      //     row.append($('<td>').text(blendName));
-      //     row.append($('<td>').text(blendDescription));
-      //     row.append($('<td>').text(flavourProfiles));
+          // Append cells to the row
+          row.append($('<td>').text(blendName));
+          row.append($('<td>').text(blendDescription));
+          row.append($('<td>').text(flavourProfiles));
 
-      //     // Append the row to the table body
-      //     blendstableBody.append(row);
-      // });
+          // Append the row to the table body
+          blendstableBody.append(row);
+      });
 
 
   });
