@@ -200,6 +200,56 @@ function playlist3() {
 
 playlist3();
 
+//COFFEE BLENDS SELECTION // 
+
+function displayBlends() {
+  fetch("https://fake-coffee-api.vercel.app/api")
+  .then((res) => res.json())
+  .then((data) => {
+      const filteredData = data.filter(function(item){
+          return item
+      })
+      console.log(filteredData);
+
+      // //access name
+      // const blendName = filteredData[0].name;
+      // console.log(blendName);
+
+      // //access description 
+      // const blendDescription = filteredData[0].description;
+      // console.log(blendDescription);
+
+      // // Access the table body
+      // const blendstableBody = $('#data-table-blends tbody');
+
+      // // Loop through the items and populate the table
+      // filteredData.forEach ((items) =>{
+      //     // Access data for each blend name
+      //     const blendName = items.name;
+      //     const blendDescription = items.description;
+      //     const flavourProfiles = items.flavor_profile;
+      //     console.log(items.flavor_profile);
+      //     console.log(blendName);
+
+      //     // Create a new row
+      //     const row = $('<tr>');
+
+      //     // Append cells to the row
+      //     row.append($('<td>').text(blendName));
+      //     row.append($('<td>').text(blendDescription));
+      //     row.append($('<td>').text(flavourProfiles));
+
+      //     // Append the row to the table body
+      //     blendstableBody.append(row);
+      // });
+
+
+  });
+}
+
+displayBlends();
+
+
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
 var coffeeQuestions = [
   {
