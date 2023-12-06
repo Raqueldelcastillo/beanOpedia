@@ -3,7 +3,11 @@ $(document).ready(function () {
   $("#myModal").modal("show");
 });
 
-
+var queryUrl = "https://api.sampleapis.com/coffee/hot";
+fetch(queryUrl).then(function (response) {
+  console.log(response);
+  return response.json();
+});
 
 var recipeBtn1 = document.querySelector("#Cappucino-recipe");
 
@@ -87,7 +91,7 @@ function playlist1() {
 }
 
 playlist1();
-console.log(response)
+console.log(response);
 
 //PLAYLIST 2//
 
@@ -191,55 +195,52 @@ function playlist3() {
 
 playlist3();
 
-//COFFEE BLENDS SELECTION // 
+//COFFEE BLENDS SELECTION //
 
 function displayBlends() {
   fetch("https://fake-coffee-api.vercel.app/api")
-  .then((res) => res.json())
-  .then((data) => {
-      const filteredData = data.filter(function(item){
-          return item
-      })
+    .then((res) => res.json())
+    .then((data) => {
+      const filteredData = data.filter(function (item) {
+        return item;
+      });
       console.log(filteredData);
 
       //access name
       const blendName = filteredData[0].name;
       console.log(blendName);
 
-      //access description 
+      //access description
       const blendDescription = filteredData[0].description;
       console.log(blendDescription);
 
       // Access the table body
-      const blendstableBody = $('#data-table-blends tbody');
+      const blendstableBody = $("#data-table-blends tbody");
 
       // Loop through the items and populate the table
-      filteredData.forEach ((items) =>{
-          // Access data for each blend name
-          const blendName = items.name;
-          const blendDescription = items.description;
-          const flavourProfiles = items.flavor_profile;
-          console.log(items.flavor_profile);
-          console.log(blendName);
+      filteredData.forEach((items) => {
+        // Access data for each blend name
+        const blendName = items.name;
+        const blendDescription = items.description;
+        const flavourProfiles = items.flavor_profile;
+        console.log(items.flavor_profile);
+        console.log(blendName);
 
-          // Create a new row
-          const row = $('<tr>');
+        // Create a new row
+        const row = $("<tr>");
 
-          // Append cells to the row
-          row.append($('<td>').text(blendName));
-          row.append($('<td>').text(blendDescription));
-          row.append($('<td>').text(flavourProfiles));
+        // Append cells to the row
+        row.append($("<td>").text(blendName));
+        row.append($("<td>").text(blendDescription));
+        row.append($("<td>").text(flavourProfiles));
 
-          // Append the row to the table body
-          blendstableBody.append(row);
+        // Append the row to the table body
+        blendstableBody.append(row);
       });
-
-
-  });
+    });
 }
 
 displayBlends();
-
 
 // var question created for questions array with answers, correct answer and fact that will pop up once user presses on any of the answers.
 var coffeeQuestions = [
@@ -371,21 +372,21 @@ function displayQuestions() {
 
 // create answer button function
 function createAnsBtn(answer, correctAns, fact) {
-    var answerBtn = $("<button>").addClass("answer").text(answer);
-    console.log("answerBtn");
-    answerBtn.on("click", function () {
-        console.log("Answer button clicked");
-        var selectedAns = $(this).text();
-        console.log("Selected Answer: ", selectedAns);
-        checkAns(selectedAns, correctAns, fact);
-    });
-    console.log("click");
-    $("#choices").append(answerBtn);
+  var answerBtn = $("<button>").addClass("answer").text(answer);
+  console.log("answerBtn");
+  answerBtn.on("click", function () {
+    console.log("Answer button clicked");
+    var selectedAns = $(this).text();
+    console.log("Selected Answer: ", selectedAns);
+    checkAns(selectedAns, correctAns, fact);
+  });
+  console.log("click");
+  $("#choices").append(answerBtn);
 }
 // create a function that checks if the user selected correct answer and display a fact within the modal
 function checkAns(selectedAns, correctAns, fact) {
-    console.log("Selected Answer:", selectedAns);
-    console.log("Correct Answer:", correctAns);
+  console.log("Selected Answer:", selectedAns);
+  console.log("Correct Answer:", correctAns);
   if (selectedAns === correctAns) {
     winCount++;
     feedback.removeClass("hide").text("Genius! You are correct! " + fact);
@@ -397,7 +398,7 @@ function checkAns(selectedAns, correctAns, fact) {
 }
 // create a function to reset answer buttons (for each question)
 function resetAnsBtns() {
-    $("#choices").empty();
+  $("#choices").empty();
 }
 // create a function to display next question
 function displayNextQuestion() {
@@ -415,35 +416,37 @@ function displayNextQuestion() {
 }
 // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
 submitBtn.on("click", function (event) {
-    event.preventDefault();
-    var userInitials = initials.val();
-    // initials.value = "";
-    feedback.addClass("hide");
-    // endScreen.removeClass("hide");
-    endQuiz(userInitials);
-    // store userInitials in local storage
-    localStorage.setItem(userInitials + "_" + Date.now(), totalScore.toString());
+  event.preventDefault();
+  var userInitials = initials.val();
+  // initials.value = "";
+  feedback.addClass("hide");
+  // endScreen.removeClass("hide");
+  endQuiz(userInitials);
+  // store userInitials in local storage
+  localStorage.setItem(userInitials + "_" + Date.now(), totalScore.toString());
 
-    // hide the submit button and show success message
-    submitBtn.addClass("hide");
-    showSuccessMsg();
-})
+  // hide the submit button and show success message
+  submitBtn.addClass("hide");
+  showSuccessMsg();
+});
 
 // create a function to show the final score and remove question element with answer buttons
 function endQuiz(userInitials) {
-    questionEl.addClass("hide");
-    endScreen.removeClass("hide");
-// display users final score 
-    var finalScore = $("#final-score");
-    finalScore.text(totalScore);
-};
+  questionEl.addClass("hide");
+  endScreen.removeClass("hide");
+  // display users final score
+  var finalScore = $("#final-score");
+  finalScore.text(totalScore);
+}
 
 // hide submitBtn and show submit-screen
 function showSuccessMsg() {
-    var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
-    // append successMsg
-    submitBtn.parent().append(successMsg);
-};
+  var successMsg = $("<p>").text(
+    "Good job! The world of learning about coffee is limitless!"
+  );
+  // append successMsg
+  submitBtn.parent().append(successMsg);
+}
 
 function coffeeApi() {
   var queryUrl = "https://api.sampleapis.com/coffee/hot";
@@ -466,5 +469,3 @@ coffeeApi();
 //   currentEl.append(coffeeEl);
 // }
 // showhotCoffee();
-
-

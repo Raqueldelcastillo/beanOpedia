@@ -14,6 +14,15 @@ body {
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.logo {
+  border-radius: 15px;
+  float: left;
+  margin-bottom: 50px auto;
+}
+.description {
+  float: inline-start;
+  padding: 30px auto;
+}
 .nav-link {
   color: black;
   transition: brown;
@@ -70,19 +79,19 @@ button:hover {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-
 }
 .modal-title {
-  color: #965E24;
+  color: #965e24;
   text-align: center;
 }
 .modal-body {
-  color: #965E24;
+  color: #965e24;
 }
-.custom-Jumbo {
-  background-image: url(../images/beans\ 3.png);
-  background-size: cover;
-}
+/* .custom-Jumbo {
+  border-radius: 15px;
+  color: #412809;
+  font-weight: bolder;
+} */
 /* Footer */
 .emailContain {
   width: auto;
