@@ -181,6 +181,7 @@ function displayBlends() {
             const blendName = items.name;
             const blendDescription = items.description;
             const flavourProfiles = items.flavor_profile;
+            console.log(items.flavor_profile);
             console.log(blendName);
 
             // Create a new row
@@ -189,6 +190,7 @@ function displayBlends() {
             // Append cells to the row
             row.append($('<td>').text(blendName));
             row.append($('<td>').text(blendDescription));
+            row.append($('<td>').text(flavourProfiles));
 
             // Append the row to the table body
             blendstableBody.append(row);
