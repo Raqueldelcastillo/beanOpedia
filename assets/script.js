@@ -364,19 +364,19 @@ function displayQuestions() {
     console.log(answer);
     // var answerBtn = $("<button>").addClass("answer").text(answer);
     // answerBtns.append(answerBtn);
-    createAnsBtn(answer, currentQuestion.correctAns);
+    createAnsBtn(answer, currentQuestion.correctAns, currentQuestion.fact);
   });
 }
 
 // create answer button function
-function createAnsBtn(answer, correctAns) {
+function createAnsBtn(answer, correctAns, fact) {
     var answerBtn = $("<button>").addClass("answer").text(answer);
     console.log("answerBtn");
     answerBtn.on("click", function () {
         console.log("Answer button clicked");
         var selectedAns = $(this).text();
         console.log("Selected Answer: ", selectedAns);
-        checkAns(selectedAns, correctAns);
+        checkAns(selectedAns, correctAns, fact);
     });
     console.log("click");
     $("#choices").append(answerBtn);
@@ -389,7 +389,7 @@ function checkAns(selectedAns, correctAns, fact) {
     winCount++;
     feedback.removeClass("hide").text("Genius! You are correct! " + fact);
   } else {
-    feedback.removeClass("hide").text("Sorry.. Wrong " + fact);
+    feedback.removeClass("hide").text("Sorry.. Wrong.. " + fact);
   }
   totalScore = winCount;
   displayNextQuestion();
@@ -407,13 +407,33 @@ function displayNextQuestion() {
   } else {
     console.log("End of quiz. Total Score: " + totalScore);
 
+    questionEl.addClass("hide");
     endScreen.removeClass("hide");
     $("#final-score").text(totalScore);
   }
 }
 // create a function to store user initials within a local storage and keep them displayed even when page reloads, so that useer can access it
+submitBtn.on("click", function (event) {
+    event.preventDefault();
+    var userInitials = initials.val();
+    // initials.value = "";
+    feedback.addClass("hide");
+    // endScreen.removeClass("hide");
+    endQuiz(userInitials);
+    // store userInitials in local storage
+    localStorage.setItem(userInitials + "_" + Date.now(), totalScore.toString());
 
-// create a function to show the final score
+    // hide the submit button and show success message
+})
+
+// create a function to show the final score and remove question element with answer buttons
+function endQuiz(userInitials) {
+    questionEl.addClass("hide");
+    endScreen.removeClass("hide");
+// display users final score 
+    var finalScore = $("#final-score");
+    finalScore.text(totalScore);
+};
 
 function coffeeApi() {
   var queryUrl = "https://api.sampleapis.com/coffee/hot";
