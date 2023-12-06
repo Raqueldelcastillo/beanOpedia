@@ -317,45 +317,52 @@ function displayQuestions() {
   questionTitle.text(currentQuestion.question);
 
   var answerBtns = $("#choices");
-  answerBtns.html("");
+  answerBtns.empty();
 
   console.log(currentQuestion);
   currentQuestion.answers.forEach(function (answer) {
     console.log(answer);
-    var answerBtn = $("<button>").addClass("answer").text(answer);
-    answerBtns.append(answerBtn);
+    // var answerBtn = $("<button>").addClass("answer").text(answer);
+    // answerBtns.append(answerBtn);
+    createAnsBtn(answer, currentQuestion.correctAns);
   });
 }
 
 // create answer button function
 function createAnsBtn(answer, correctAns) {
-  var answerBtn = $("<button>")
-    .addClass("button")
-    .text(answer)
-    .attr("data-correct-ans", correctAns);
-
-  answerBtn.on("click", function () {
-    var selectedAns = $(this).text();
-    checkAns(selectedAns, correctAns);
-    displayNextQuestion();
-  });
-  $("#choices").append(answerBtn);
+    var answerBtn = $("<button>").addClass("answer").text(answer);
+    console.log("answerBtn");
+    answerBtn.on("click", function () {
+        console.log("Answer button clicked");
+        var selectedAns = $(this).text();
+        console.log("Selected Answer: ", selectedAns);
+        checkAns(selectedAns, correctAns);
+    });
+    console.log("click");
+    $("#choices").append(answerBtn);
 }
 // create a function that checks if the user selected correct answer and display a fact within the modal
-function checkAns(selectedAns, correctAns) {
+function checkAns(selectedAns, correctAns, fact) {
+    console.log("Selected Answer:", selectedAns);
+    console.log("Correct Answer:", correctAns);
   if (selectedAns === correctAns) {
     winCount++;
-    feedback.removeClass("hide").text("Genius! You are correct!");
+    feedback.removeClass("hide").text("Genius! You are correct! " + fact);
   } else {
-    feedback.removeClass("hide").text("Sorry.. Wrong");
+    feedback.removeClass("hide").text("Sorry.. Wrong " + fact);
   }
   totalScore = winCount;
+  displayNextQuestion();
 }
 // create a function to reset answer buttons (for each question)
+function resetAnsBtns() {
+    $("#choices").empty();
+}
 // create a function to display next question
 function displayNextQuestion() {
   currentQuesIndex++;
   if (currentQuesIndex < coffeeQuestions.length) {
+    resetAnsBtns();
     displayQuestions();
   } else {
     console.log("End of quiz. Total Score: " + totalScore);
