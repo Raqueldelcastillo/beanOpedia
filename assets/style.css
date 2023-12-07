@@ -14,6 +14,23 @@ body {
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.coffee-history-text{
+  background-color: #E6D5B8;
+}
+
+.table-history {
+  background-color: #E6D5B8;
+}
+
+#data-table-blends{
+  background-color: #E6D5B8;
+}
+
+#blends-table{
+  background-color: #E6D5B8;
+}
+
 .container {
   margin-bottom: 50px;
 }
@@ -181,7 +198,7 @@ footer {
 
 #data-table-blends td {
   border: 1px solid #ddd; 
-  padding: 15px; 
+  padding: 10px; 
 }
 
 .blend-name {
