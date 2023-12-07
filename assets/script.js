@@ -198,6 +198,7 @@ playlist3();
 //COFFEE BLENDS SELECTION //
 
 function displayBlends() {
+
    fetch("https://fake-coffee-api.vercel.app/api")
     .then((res) => res.json())
     .then((data) => {
