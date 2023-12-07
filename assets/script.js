@@ -442,6 +442,7 @@ function endQuiz(userInitials) {
 
   // hide submitBtn and show submit-screen
   function showSuccessMsg() {
+    $("#user-input").hide();
 
     // fetch the gif from GIPHY using its ID 
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=tDmaFprc0IYucQ44TZpNF5WwVom4w9S1&tag=coffee`)
@@ -449,13 +450,25 @@ function endQuiz(userInitials) {
         .then(data => {
             if (data.data && data.data.images && data.data.images.original.url) {
                 // success message
-                var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
+                // var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!.. P.s. Check Ryan's coffee company: " );
+                var successMsg = $("#success-message");
+                var coffeeCompanyLink = $("<a>").attr("href", "https://americacoffeeco.com/").attr("target", "_blank").text("America Coffee Co");
 
                 // giphy image URL
                 var giphyImageUrl = data.data.images.original.url;
                 // giphy image element added
                 var giphyImage = $("<img>").attr("src", giphyImageUrl).attr("alt", "Giphy Image");
-                submitBtn.parent().append(successMsg, giphyImage);
+
+                // successMsg.append(coffeeCompanyLink);
+                // submitBtn.parent().append(successMsg, giphyImage);
+                successMsg.find("p").append(coffeeCompanyLink);
+                successMsg.find("#giphy-image").attr("src", giphyImageUrl);
+
+                // show the success message section
+                successMsg.removeClass("hide");
+                // hide the user-input section if quiz has ended
+
+
                 } else {
                     console.error('failed to retrieve Giphy image.');
                 };
