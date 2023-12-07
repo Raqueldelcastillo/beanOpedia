@@ -15,6 +15,9 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#recipes{
+  padding: 20px;
+}
 .coffee-history-text{
   background-color: #E6D5B8;
 }
@@ -186,6 +189,7 @@ footer {
     color: #fff;
   } */
 /* quiz part */
+
 #start-screen {
   text-align: center;
 }
@@ -194,7 +198,14 @@ footer {
   display: none;
 }
 
+#quiz{
+  background-color: #E6D5B8;
+}
 
+#start{
+  text-align: center;
+  align-items: center;
+}
 
 #data-table-blends td {
   border: 1px solid #ddd; 

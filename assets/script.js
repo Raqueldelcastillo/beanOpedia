@@ -50,7 +50,7 @@ function playlist1() {
     url: "https://spotify23.p.rapidapi.com/playlist_tracks/?id=2Btl13LcHI3ecZyL39rGnJ&offset=0&limit=100",
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f",
+      "X-RapidAPI-Key": "469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f",
       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
   };
@@ -102,7 +102,7 @@ function playlist2() {
     url: "https://spotify23.p.rapidapi.com/playlist_tracks/?id=3UEBkaOZDmX7RXxNNxYcBA&offset=0&limit=100",
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f",
+      "X-RapidAPI-Key": "469797d608msh05fbf31296aca74p16ffe9jsn5a6f3b196b7f",
       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
   };
@@ -153,7 +153,7 @@ function playlist3() {
     url: "https://spotify23.p.rapidapi.com/playlist_tracks/?id=37i9dQZF1DX1uaml3UXYLk&offset=0&limit=100",
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "3cfa4d94ffmsh8430dae15028c44p19369ejsn0c713f2b6221",
+      "X-RapidAPI-Key": "3cfa4d94ffmsh8430dae15028c44p19369ejsn0c713f2b6221",
       "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
   };
