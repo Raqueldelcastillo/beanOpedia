@@ -497,3 +497,23 @@ coffeeApi();
 //   currentEl.append(coffeeEl);
 // }
 // showhotCoffee();
+
+$("#submitNewsletter").on("click", function(event) {
+    event.preventDefault();
+
+    // show the Bootstrap modal
+    $("#newsletterModal").modal("show");
+    // var to get entered email
+    var userEmail = $("#exampleInputEmail1").val();
+    localStorage.setItem("userEmail", userEmail);
+    // show the Bootstrap modal
+    $("#newsletterModal").modal("show");
+        // hide modal after a few seconds
+      setTimeout(function () {
+        $("#newsletterModal").modal("hide");
+      }, 3000);
+
+        // clear the input field
+        $("#exampleInputEmail1").val("");
+      });
+    // });
