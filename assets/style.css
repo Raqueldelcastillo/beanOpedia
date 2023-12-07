@@ -14,10 +14,13 @@ body {
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.container {
+  margin-bottom: 50px;
+}
 .logo {
   border-radius: 15px;
   float: left;
-  margin-bottom: 50px auto;
+  /* margin-bottom: 50px auto; */
 }
 .description {
   float: inline-start;
@@ -26,6 +29,7 @@ body {
 .nav-link {
   color: black;
   transition: brown;
+  margin-bottom: 30px;
 }
 .navbar-nav {
   margin-left: auto;
@@ -40,11 +44,11 @@ body {
 }
 
 .start button {
-  background-image: url(../images/simple\ map.jpg);
+  background: #074a2a;
   font-weight: bold;
   border-radius: 20px;
   border-color: goldenrod;
-  color: #664113;
+  color: #b37a35;
   box-shadow: #e7c484;
 }
 button:hover {
@@ -79,6 +83,7 @@ button:hover {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  margin: 30px auto;
 }
 .modal-title {
   color: #965e24;
@@ -128,7 +133,21 @@ footer {
 .card {
   margin: 0 auto;
 }
-
+.answer {
+  background-color: #197e4d;
+  border-radius: 20px;
+  font-weight: lighter;
+  margin: 15px;
+  display: block;
+}
+#submit {
+  border-radius: 20px;
+  background: #23a064;
+}
+#initials {
+  border-radius: 20px;
+  background: #197e4d;
+}
 /*Music Modal*/
 
 /* .modal-btn {
