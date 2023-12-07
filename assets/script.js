@@ -439,11 +439,9 @@ var coffeeQuestions = [
       finalScore.text(totalScore);
   };
 
-  var quizEnded = false;
   // hide submitBtn and show submit-screen
   function showSuccessMsg() {
-    // $("#user-input").hide();
-    quizEnded = true;
+    $("#user-input").hide();
 
     // fetch the gif from GIPHY using its ID 
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=tDmaFprc0IYucQ44TZpNF5WwVom4w9S1&tag=coffee`)
@@ -468,9 +466,7 @@ var coffeeQuestions = [
                 // show the success message section
                 successMsg.removeClass("hide");
                 // hide the user-input section if quiz has ended
-                if (quizEnded) {
-                    $("#user-input").hide();
-                }
+
 
                 } else {
                     console.error('failed to retrieve Giphy image.');
