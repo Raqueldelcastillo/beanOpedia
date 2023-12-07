@@ -17,7 +17,6 @@ Our link for the repository is:  https://github.com/Raqueldelcastillo/beanOpedia
 
 Our link for the deployed application is:https://raqueldelcastillo.github.io/beanOpedia/
 
-#Screenshot
 
 ![image](https://github.com/SalxIeva/prework-study-guide/assets/133906072/2a20582a-5248-4f1c-b2c4-f31e1794c749)
 
