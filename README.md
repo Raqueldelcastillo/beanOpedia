@@ -14,6 +14,7 @@ For our Project we have used some of the technologies that we have learned in th
 
 
 Our link for the repository is:  https://github.com/Raqueldelcastillo/beanOpedia
+
 Our link for the deployed application is:https://raqueldelcastillo.github.io/beanOpedia/
 
 #Screenshot
