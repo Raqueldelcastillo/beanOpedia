@@ -438,12 +438,28 @@ var coffeeQuestions = [
       var finalScore = $("#final-score");
       finalScore.text(totalScore);
   };
-  
+
   // hide submitBtn and show submit-screen
   function showSuccessMsg() {
-      var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
-      // append successMsg
-      submitBtn.parent().append(successMsg);
+
+    // fetch the gif from GIPHY using its ID 
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=tDmaFprc0IYucQ44TZpNF5WwVom4w9S1&tag=coffee`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data.images && data.data.images.original.url) {
+                // success message
+                var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
+
+                // giphy image URL
+                var giphyImageUrl = data.data.images.original.url;
+                // giphy image element added
+                var giphyImage = $("<img>").attr("src", giphyImageUrl).attr("alt", "Giphy Image");
+                submitBtn.parent().append(successMsg, giphyImage);
+                } else {
+                    console.error('failed to retrieve Giphy image.');
+                };
+            });
+    //   submitBtn.parent().append(giphyEmbedCode);
   };
   
 
