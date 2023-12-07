@@ -699,7 +699,7 @@
       <!-- footer Bootstrap -->
 
       <footer class="emailContain">
-        <form>
+        <form id="Newsletter">
           <div class="row align-items-center box">
             <h3 class="sectionHeading">Join Our Newsletter</h3>
             <div class="mb-3">
@@ -712,10 +712,20 @@
                 placeholder="Enter email"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button type="submit" class="btn btn-primary" id="submitNewsletter">Sign Up</button>
           </div>
         </form>
       </footer>
+      <!-- Bootstrap Modal for newsletter -->
+  <div class="modal" id="newsletterModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          Thank you for signing up!
+        </div>
+      </div>
+    </div>
+  </div>
       <!-- <div class="container text-center footer">
                       <div class="row align-items-center box">
                         <div class="col-md-4">
