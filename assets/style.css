@@ -192,6 +192,7 @@ footer {
 
 #start-screen {
   text-align: center;
+  padding: 10px;
 }
 
 .hide {
@@ -214,4 +215,9 @@ footer {
 
 .blend-name {
   font-weight: bold;
+}
+
+
+#success-message{
+  padding-bottom: 10px;
 }
