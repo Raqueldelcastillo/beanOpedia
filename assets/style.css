@@ -176,3 +176,14 @@ footer {
 .hide {
   display: none;
 }
+
+
+
+#data-table-blends td {
+  border: 1px solid #ddd; 
+  padding: 15px; 
+}
+
+.blend-name {
+  font-weight: bold;
+}

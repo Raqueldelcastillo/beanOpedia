@@ -198,7 +198,8 @@ playlist3();
 //COFFEE BLENDS SELECTION //
 
 function displayBlends() {
-  fetch("https://fake-coffee-api.vercel.app/api")
+
+   fetch("https://fake-coffee-api.vercel.app/api")
     .then((res) => res.json())
     .then((data) => {
       const filteredData = data.filter(function (item) {
@@ -439,33 +440,29 @@ function endQuiz(userInitials) {
   finalScore.text(totalScore);
 }
 
-// hide submitBtn and show submit-screen
-function showSuccessMsg() {
-  // fetch the gif from GIPHY using its ID
-  fetch(
-    `https://api.giphy.com/v1/gifs/random?api_key=tDmaFprc0IYucQ44TZpNF5WwVom4w9S1&tag=coffee`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.data && data.data.images && data.data.images.original.url) {
-        // success message
-        var successMsg = $("<p>").text(
-          "Good job! The world of learning about coffee is limitless!"
-        );
+  // hide submitBtn and show submit-screen
+  function showSuccessMsg() {
 
-        // giphy image URL
-        var giphyImageUrl = data.data.images.original.url;
-        // giphy image element added
-        var giphyImage = $("<img>")
-          .attr("src", giphyImageUrl)
-          .attr("alt", "Giphy Image");
-        submitBtn.parent().append(successMsg, giphyImage);
-      } else {
-        console.error("failed to retrieve Giphy image.");
-      }
-    });
-  //   submitBtn.parent().append(giphyEmbedCode);
-}
+    // fetch the gif from GIPHY using its ID 
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=tDmaFprc0IYucQ44TZpNF5WwVom4w9S1&tag=coffee`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data.images && data.data.images.original.url) {
+                // success message
+                var successMsg = $("<p>").text("Good job! The world of learning about coffee is limitless!");
+
+                // giphy image URL
+                var giphyImageUrl = data.data.images.original.url;
+                // giphy image element added
+                var giphyImage = $("<img>").attr("src", giphyImageUrl).attr("alt", "Giphy Image");
+                submitBtn.parent().append(successMsg, giphyImage);
+                } else {
+                    console.error('failed to retrieve Giphy image.');
+                };
+            });
+    //   submitBtn.parent().append(giphyEmbedCode);
+  };
+  
 
 function coffeeApi() {
   var queryUrl = "https://api.sampleapis.com/coffee/hot";
@@ -488,3 +485,23 @@ coffeeApi();
 //   currentEl.append(coffeeEl);
 // }
 // showhotCoffee();
+
+$("#submitNewsletter").on("click", function(event) {
+    event.preventDefault();
+
+    // show the Bootstrap modal
+    $("#newsletterModal").modal("show");
+    // var to get entered email
+    var userEmail = $("#exampleInputEmail1").val();
+    localStorage.setItem("userEmail", userEmail);
+    // show the Bootstrap modal
+    $("#newsletterModal").modal("show");
+        // hide modal after a few seconds
+      setTimeout(function () {
+        $("#newsletterModal").modal("hide");
+      }, 3000);
+
+        // clear the input field
+        $("#exampleInputEmail1").val("");
+      });
+    // });
